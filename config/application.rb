@@ -21,6 +21,9 @@ module Workspace
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    Rails.application.configure do
+      config.web_console.whitelisted_ips = '192.168.0.0/16'
+    end
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
