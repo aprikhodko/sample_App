@@ -18,4 +18,11 @@ class User < ActiveRecord::Base
         def clear_password
             self.password = nil
         end
+    end
+    
+    devise :database_authenticatable, :registerable,
+           :reconverable, :rememberable, :trackable, :validatable
+           
+    has_many :conversations, :foreign_key => :sender_id
+        
 end
