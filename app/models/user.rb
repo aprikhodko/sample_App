@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
     validates :password, :confirmation => true
     validates_length_of :password, :in => 6..20, :on => :create
     
+    attr_accessible :username, :email, :password, :password_confirmation
+    
     before_save :encrypted_password
     after_save :clear_password
     def encrypt_password
