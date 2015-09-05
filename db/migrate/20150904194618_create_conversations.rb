@@ -8,6 +8,6 @@ class CreateConversations < ActiveRecord::Migration
     end
     
     add_index :conversations, :sender_id
-    add_index :conversatons, :recipient_id
+    add_index :conversations, :recipient_id
   end
 end
