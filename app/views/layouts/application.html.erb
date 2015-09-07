@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ruby on Rails Chat App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
+
+  <title>Chatty</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-      <body>
-        <div class="Main_header">
-          <h1>Ruby Source</h1>
-          <%unless session[:user_id]%>
-            <ul class="nav">
-              <li><%= link_to :Signup , :signup, class: "nav_links"%></li>|
-              <li><%= link_to :Login , :login, class: "nav_links"%></li>
-            </ul>
-          <%else%>
-            <ul class="nav">
-              <li><%= link_to :Home , :home, class: "nav_links" %> |</li>
-              <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-              <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
-              <li><%= link_to :Logout , :logout, class: "nav_links" %></li>
-            </ul>
-          <%end%>
-        </div>
-        <% if flash[:color]== "valid" %>
-          <div class="valid_notice">
-            <p><%= flash[:notice]%></p>
-          </div>
-        <% elsif flash[:color]== "invalid"%>
-          <div class="invalid_notice">
-            <p><%=flash[:notice]%></p>
-          </div>
-        <%else%>
-          <div class="notice">
-            <p><%=flash[:notice]%></p>
-          </div>
-        <%end%>
-      <%= yield %>
 
+  <!-- shiv here -->
+
+</head>
+
+<body>
+
+<%= render 'layouts/nav' %>
+
+<div class="container">
+  <!-- flash messages here -->
+  <%= yield %>
+</div>
+<audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 </body>
+
 </html>
