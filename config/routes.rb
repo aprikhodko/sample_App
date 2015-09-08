@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  devise_for :users
+  devise_for :models #models refers to users 
 
   authenticated :user do
     root 'users#index'
@@ -15,4 +14,5 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
+  
 end
