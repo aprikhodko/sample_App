@@ -23,7 +23,8 @@
 <%= render 'layouts/nav' %>
 
 <div class="container">
-  <!-- flash messages here -->
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
   <%= yield %>
 </div>
 <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
