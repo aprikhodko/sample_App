@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Developed on Cloud9
+Utlized Private Pub, Thin and Devise as three main gems for this app.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Here is a sample chat app where the users need to be authenticated, have a profile, and be able to chat with another user. 
+Currently most of the code is up for this app, but the routing needs to reworked to get the app to view properly. 
+In the meantime, this app is intended to be a code sample for Ruby on Rails.
